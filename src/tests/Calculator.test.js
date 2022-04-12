@@ -205,9 +205,12 @@ it('should add multiple decimal numbers', () =>{
   button5.simulate('click');
   expect(runningTotal.text()).toEqual('7.68');
   
-  // multiple operators and decimal can only be accessed via var and not let / const, due to its broader scope.
-  // Otherwise code complains that variable cannot be redeclared.
+  // multiple operators and decimal can only be accessed via var and not let / const. Const would set them to constant and
+  // cannot be changed and let cannot be used here to redeclare the same variable name again.
 })
+
+
+
 it('should have negative result', () =>{
   var button9 = container.find('#number9');
   var operatorSubtract = container.find('#operator-subtract');
@@ -223,6 +226,7 @@ it('should have negative result', () =>{
   button8.simulate('click');
   expect(runningTotal.text()).toEqual('-4');
 })
+
 
 })
 
